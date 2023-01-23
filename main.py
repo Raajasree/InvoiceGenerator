@@ -6,9 +6,9 @@ from tkinter import messagebox
 
 
 def clear_item():
-    qty_spinbox.delete(0, tkinter.END)
-    qty_spinbox.insert(0, "1")
-    desc_entry.delete(0, tkinter.END)
+    Qty_spinbox.delete(0, tkinter.END)
+    Qty_spinbox.insert(0, "1")
+    item_entry.delete(0, tkinter.END)
     price_spinbox.delete(0, tkinter.END)
     price_spinbox.insert(0, "0.0")
 
@@ -17,8 +17,8 @@ invoice_list = []
 
 
 def add_item():
-    qty = int(qty_spinbox.get())
-    desc = desc_entry.get()
+    qty = int(Qty_spinbox.get())
+    desc = item_entry.get()
     price = float(price_spinbox.get())
     line_total = qty * price
     invoice_item = [qty, desc, price, line_total]
@@ -100,7 +100,7 @@ price_spinbox.grid(row=3, column=2)
 add_item_button = tkinter.Button(frame, text="Add item", command=add_item)
 add_item_button.grid(row=4, column=2, pady=5)
 
-columns = ('item', 'Qty', 'price', 'total')
+columns = ('Qty', 'item', 'price', 'total')
 tree = ttk.Treeview(frame, columns=columns, show="headings")
 tree.heading('item', text='Item')
 tree.heading('Qty', text='Quantity')
